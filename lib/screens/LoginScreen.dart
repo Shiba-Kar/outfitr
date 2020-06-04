@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:outfitr/screens/ForgotPasswordScreen.dart';
+import 'package:outfitr/screens/CreateAccountScreen.dart';
 import 'package:outfitr/widgets/Iconsiconemail.dart';
 import 'package:outfitr/widgets/Iconsiconlock.dart';
 import 'package:outfitr/widgets/iconsiconcheckmark.dart';
@@ -90,7 +92,7 @@ class _LoginState extends State<LoginScreeen> {
                         fontFamily: 'SFProDisplay-Regular',
                         fontSize: 16,
                         color: const Color(0x800c0d34),
-                        height: height/600,
+                        height: height / 600,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -114,6 +116,7 @@ class _LoginState extends State<LoginScreeen> {
                     width: width / 1.2,
                     height: height / 14,
                     child: TextFormField(
+                      obscureText: true,
                       decoration: InputDecoration(
                         prefixIcon: Iconsiconlock(),
                         // suffixIcon: Iconsiconcheckmark(),
@@ -132,14 +135,19 @@ class _LoginState extends State<LoginScreeen> {
                     child: CheckboxListTile(
                       value: checkbox,
                       controlAffinity: ListTileControlAffinity.leading,
-                      secondary: Text(
-                        'Forgot password',
-                        style: TextStyle(
-                          fontFamily: 'SFProDisplay-Medium',
-                          fontSize: 15,
-                          color: const Color(0xff2cb9b0),
+                      secondary: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPasswordScreen())),
+                        child: Text(
+                          'Forgot password',
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay-Medium',
+                            fontSize: 15,
+                            color: const Color(0xff2cb9b0),
+                          ),
+                          textAlign: TextAlign.right,
                         ),
-                        textAlign: TextAlign.right,
                       ),
                       onChanged: (value) {
                         print(value);
@@ -184,26 +192,30 @@ class _LoginState extends State<LoginScreeen> {
                   ),
                   Container(
                     width: width,
-                    child: Text.rich(
-                      TextSpan(
-                        style: TextStyle(
-                          fontFamily: 'SFProDisplay-Medium',
-                          fontSize: 15,
-                          color: const Color(0xffffffff),
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Don’t have an account? ',
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => CreateAccountScreen())),
+                      child: Text.rich(
+                        TextSpan(
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay-Medium',
+                            fontSize: 15,
+                            color: const Color(0xffffffff),
                           ),
-                          TextSpan(
-                            text: 'Sign Up here',
-                            style: TextStyle(
-                              color: const Color(0xff2cb9b0),
+                          children: [
+                            TextSpan(
+                              text: 'Don’t have an account? ',
                             ),
-                          ),
-                        ],
+                            TextSpan(
+                              text: 'Sign Up here',
+                              style: TextStyle(
+                                color: const Color(0xff2cb9b0),
+                              ),
+                            ),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],

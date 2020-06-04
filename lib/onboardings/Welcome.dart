@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/Createaccount.dart';
-import 'package:outfitr/LoginScreen.dart';
+import 'package:outfitr/screens/ForgotPasswordScreen.dart';
+import 'package:outfitr/screens/CreateAccountScreen.dart';
+
+import 'package:outfitr/screens/LoginScreen.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
@@ -59,12 +61,12 @@ class Welcome extends StatelessWidget {
                     DelayedAnimation(
                       delay: 500,
                       child: SizedBox(
-                        width: 236.0,
+                        width: width,
                         child: Text(
                           'Let’s get started',
                           style: TextStyle(
                             fontFamily: 'SFProDisplay-Semibold',
-                            fontSize: 28,
+                            fontSize: width/18,
                             color: const Color(0xff0c0d34),
                           ),
                           textAlign: TextAlign.center,
@@ -72,38 +74,45 @@ class Welcome extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 302.0,
+                      width: width,
                       child: Text(
                         'Login to your account below or signup\nfor an amazing experience',
                         style: TextStyle(
                           fontFamily: 'SFProDisplay-Regular',
-                          fontSize: 16,
+                          fontSize: width/27,
                           color: const Color(0xb20c0d34),
-                          height: 1.5,
+                          height: height/700,
                         ),
                         textAlign: TextAlign.center,
                       ),
                     ),
                     ButtonsPrimarybutton(
-                      onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => LoginScreeen())),
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => LoginScreeen())),
                       text: "Log into your account",
                     ),
                     ButtonsSecondarybutton(
                       text: "Next",
-                      onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Createaccount())),
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => CreateAccountScreen())),
                     ),
                     SizedBox(
-                      width: 138.0,
-                      child: Text(
-                        'Forgot password?',
-                        style: TextStyle(
-                          fontFamily: 'SFProDisplay-Medium',
-                          fontSize: 15,
-                          color: const Color(0xff0c0d34),
+                      width: width,
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ForgotPasswordScreen(),
+                          ),
                         ),
-                        textAlign: TextAlign.center,
+                        child: Text(
+                          'Forgot password?',
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay-Medium',
+                            fontSize: width/30,
+                            color: const Color(0xff0c0d34),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ],
