@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/screens/ForgotPasswordScreen.dart';
-import 'package:outfitr/screens/CreateAccountScreen.dart';
-
-import 'package:outfitr/screens/LoginScreen.dart';
+import 'package:outfitr/screens/registration/CreateAccountScreen.dart';
+import 'package:outfitr/screens/registration/ForgotPasswordScreen.dart';
+import 'package:outfitr/screens/registration/LoginScreen.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
@@ -27,15 +26,12 @@ class Welcome extends StatelessWidget {
         children: <Widget>[
           DelayedAnimation(
             delay: 300,
-            child: Container(
-              // color: Colors.red,
-              width: width,
+            child: SvgPicture.string(
+              _svg_n3ic3q,
               height: height / 3,
-              child: SvgPicture.string(
-                _svg_n3ic3q,
-                allowDrawingOutsideViewBox: true,
-                fit: BoxFit.cover,
-              ),
+              width: width,
+              allowDrawingOutsideViewBox: true,
+              fit: BoxFit.cover,
             ),
           ),
           Align(
@@ -50,74 +46,78 @@ class Welcome extends StatelessWidget {
             ),
           ),
           Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                // color: Colors.red.withAlpha(100),
-                height: height / 2,
-                width: width,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    DelayedAnimation(
-                      delay: 500,
-                      child: SizedBox(
-                        width: width,
-                        child: Text(
-                          'Let’s get started',
-                          style: TextStyle(
-                            fontFamily: 'SFProDisplay-Semibold',
-                            fontSize: width/18,
-                            color: const Color(0xff0c0d34),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              // color: Colors.red.withAlpha(100),
+              height: height / 2,
+              width: width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  DelayedAnimation(
+                    delay: 500,
+                    child: SizedBox(
                       width: width,
                       child: Text(
-                        'Login to your account below or signup\nfor an amazing experience',
+                        'Let’s get started',
                         style: TextStyle(
-                          fontFamily: 'SFProDisplay-Regular',
-                          fontSize: width/27,
-                          color: const Color(0xb20c0d34),
-                          height: height/700,
+                          fontFamily: 'SFProDisplay-Semibold',
+                          fontSize: width / 18,
+                          color: const Color(0xff0c0d34),
                         ),
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    ButtonsPrimarybutton(
+                  ),
+                  SizedBox(
+                    width: width,
+                    child: Text(
+                      'Login to your account below or signup\nfor an amazing experience',
+                      style: TextStyle(
+                        fontFamily: 'SFProDisplay-Regular',
+                        fontSize: width / 27,
+                        color: const Color(0xb20c0d34),
+                        height: height / 700,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Hero(
+                    tag: "Log into your account",
+                    child: ButtonsPrimarybutton(
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => LoginScreeen())),
                       text: "Log into your account",
                     ),
-                    ButtonsSecondarybutton(
-                      text: "Next",
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => CreateAccountScreen())),
-                    ),
-                    SizedBox(
-                      width: width,
-                      child: GestureDetector(
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => ForgotPasswordScreen(),
-                          ),
-                        ),
-                        child: Text(
-                          'Forgot password?',
-                          style: TextStyle(
-                            fontFamily: 'SFProDisplay-Medium',
-                            fontSize: width/30,
-                            color: const Color(0xff0c0d34),
-                          ),
-                          textAlign: TextAlign.center,
+                  ),
+                  ButtonsSecondarybutton(
+                    text: "Next",
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CreateAccountScreen())),
+                  ),
+                  SizedBox(
+                    width: width,
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ForgotPasswordScreen(),
                         ),
                       ),
+                      child: Text(
+                        'Forgot password?',
+                        style: TextStyle(
+                          fontFamily: 'SFProDisplay-Medium',
+                          fontSize: width / 30,
+                          color: const Color(0xff0c0d34),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                  ],
-                ),
-              ))
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

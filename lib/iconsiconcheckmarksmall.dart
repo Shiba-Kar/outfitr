@@ -10,18 +10,11 @@ class Iconsiconcheckmarksmall extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Transform.translate(
-          offset: Offset(0.0, 0.0),
-          child:
-             
-              SvgPicture.string(
-            _svg_gx44h5,
-            allowDrawingOutsideViewBox: true,
-          ),
+    return Container(
+      child: SvgPicture.string(
+          _svg_gx44h5,
+          allowDrawingOutsideViewBox: true,
         ),
-      ],
     );
   }
 }

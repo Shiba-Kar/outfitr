@@ -1,8 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:outfitr/onboardings/Onboarding2.dart';
-import 'package:outfitr/onboardings/onboarding.dart';
+import 'package:outfitr/screens/onboardings/onboarding.dart';
 
 
 void main() async {

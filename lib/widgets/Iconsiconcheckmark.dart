@@ -10,36 +10,25 @@ class Iconsiconcheckmark extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Container(
-     
-      height: height/40,
-      width: width/40,
+      width: width / 16,
+      // color: Colors.red,
+      height: height / 30,
       margin: const EdgeInsets.all(10.0),
-      child: Stack(
-        children: <Widget>[
-          // Adobe XD layer: 'bg' (shape)
-          Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              width: width / 16,
-              height: height / 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.elliptical(100.0, 100.0)),
-                color: const Color(0xff2cb9b0),
-              ),
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.elliptical(100.0, 100.0)),
+          color: const Color(0xff2cb9b0),
+        ),
+        child: Center(
+          child: SvgPicture.string(
+          
+            _svg_ftic2j,
+            allowDrawingOutsideViewBox: true,
+            fit: BoxFit.contain,
+            height: height/80,
+            width: width/70,
           ),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: height / 40,
-              width: width / 40,
-              child: SvgPicture.string(
-                _svg_ftic2j,
-                allowDrawingOutsideViewBox: true,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:outfitr/onboardings/Onboarding1.dart';
-import 'package:outfitr/onboardings/Onboarding2.dart';
-import 'package:outfitr/onboardings/Onboarding3.dart';
-import 'package:outfitr/onboardings/Onboarding4.dart';
-import 'package:outfitr/screens/SplashScreen.dart';
+import 'package:outfitr/screens/onboardings/Onboarding1.dart';
+import 'package:outfitr/screens/onboardings/Onboarding2.dart';
+import 'package:outfitr/screens/onboardings/Onboarding3.dart';
+import 'package:outfitr/screens/onboardings/Onboarding4.dart';
+import 'package:outfitr/screens/onboardings/SplashScreen.dart';
 
 class Onboarding extends StatefulWidget {
   Onboarding({Key key}) : super(key: key);

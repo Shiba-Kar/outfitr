@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/screens/ForgotPasswordScreen.dart';
-import 'package:outfitr/screens/CreateAccountScreen.dart';
+import 'package:outfitr/screens/configurations/ConfigurationMain.dart';
+import 'package:outfitr/screens/registration/CreateAccountScreen.dart';
+import 'package:outfitr/screens/registration/ForgotPasswordScreen.dart';
+
+import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/widgets/Iconsiconemail.dart';
 import 'package:outfitr/widgets/Iconsiconlock.dart';
 import 'package:outfitr/widgets/iconsiconcheckmark.dart';
@@ -166,7 +169,14 @@ class _LoginState extends State<LoginScreeen> {
                       ),
                     ),
                   ),
-                  ButtonsPrimarybutton(text: "Log into your account"),
+                  Hero(
+                    tag: "Log into your account",
+                    child: ButtonsPrimarybutton(
+                        text: "Log into your account",
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => ConfigurationMain()))),
+                  )
                 ],
               ),
             ),
@@ -184,9 +194,14 @@ class _LoginState extends State<LoginScreeen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       SizedBox(width: width / 4),
-                      Iconsiconfacebook(),
-                      Iconsicongoogle(),
-                      Iconsiconapple(),
+                      DelayedAnimation(
+                        child: Iconsiconfacebook()),
+                      DelayedAnimation(
+                        delay: 500,
+                        child: Iconsicongoogle()),
+                      DelayedAnimation(
+                        delay: 1000,
+                        child: Iconsiconapple()),
                       SizedBox(width: width / 4),
                     ],
                   ),
@@ -227,3 +242,5 @@ class _LoginState extends State<LoginScreeen> {
     );
   }
 }
+
+

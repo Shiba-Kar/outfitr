@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/screens/LoginScreen.dart';
+import 'package:outfitr/screens/registration/LoginScreen.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
+import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/widgets/Iconsiconapple.dart';
 import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
 import 'package:outfitr/widgets/Iconsiconemail.dart';
@@ -18,11 +19,10 @@ class CreateAccountScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-       resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomPadding: false,
       backgroundColor: const Color(0xff0c0d34),
       body: Stack(
         children: <Widget>[
@@ -43,10 +43,7 @@ class CreateAccountScreen extends StatelessWidget {
             child: Container(
               height: height,
               width: width,
-              child: SvgPicture.string(
-                _svg_i6fju5,
-                fit: BoxFit.contain
-              ),
+              child: SvgPicture.string(_svg_i6fju5, fit: BoxFit.contain),
             ),
           ),
           Align(
@@ -62,18 +59,22 @@ class CreateAccountScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       SizedBox(width: width / 4),
-                      Iconsiconfacebook(),
-                      Iconsicongoogle(),
-                      Iconsiconapple(),
+                      DelayedAnimation(child: Iconsiconfacebook()),
+                      DelayedAnimation(
+                        delay: 500,
+                        child: Iconsicongoogle()),
+                      DelayedAnimation(
+                        delay: 1000,
+                        child: Iconsiconapple()),
                       SizedBox(width: width / 4),
                     ],
                   ),
                   Container(
                     width: width,
                     child: GestureDetector(
-                      onTap: ()=>Navigator.of(context).push(MaterialPageRoute(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => LoginScreeen())),
-                                          child: Text.rich(
+                      child: Text.rich(
                         TextSpan(
                           style: TextStyle(
                             fontFamily: 'SFProDisplay-Medium',
@@ -153,7 +154,6 @@ class CreateAccountScreen extends StatelessWidget {
                     child: TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        
                         prefixIcon: Iconsiconlock(),
                         // suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(

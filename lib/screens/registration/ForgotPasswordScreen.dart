@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/SuccessPopup.dart';
+
+import 'package:outfitr/screens/SuccessPopupScreen.dart';
 import 'dart:ui' as ui;
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
@@ -13,7 +14,6 @@ class ForgotPasswordScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-  
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -99,8 +99,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                     width: width,
                     child: GestureDetector(
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SuccessPopup())),
-                                          child: Text.rich(
+                          builder: (context) => SuccessPopupScreen())),
+                      child: Text.rich(
                         TextSpan(
                           style: TextStyle(
                             fontFamily: 'SFProDisplay-Medium',

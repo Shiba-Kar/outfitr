@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/onboardings/Welcome.dart';
+import 'package:outfitr/screens/onboardings/Welcome.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
@@ -134,11 +134,14 @@ class Onboarding4 extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  ButtonsPrimarybutton(
-                    text: "Log into your account",
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Welcome(),
+                  Hero(
+                    tag: "Log into your account",
+                                      child: ButtonsPrimarybutton(
+                      text: "Log into your account",
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Welcome(),
+                        ),
                       ),
                     ),
                   )
