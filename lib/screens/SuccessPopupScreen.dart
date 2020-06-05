@@ -98,6 +98,7 @@ class SuccessPopupScreen extends StatelessWidget {
                 child: DelayedAnimation(
                   delay: 500,
                   child: Iconsiconclose(
+                    isBlue: false,
                     onTap: () => Navigator.of(context).pop(),
                   ),
                 )),

@@ -9,13 +9,12 @@ import 'dart:ui' as ui;
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
 import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
-import 'package:outfitr/widgets/Iconsiconclose.dart';
 import 'package:outfitr/widgets/Iconsiconemail.dart';
 import 'package:outfitr/widgets/Iconsiconlock.dart';
 import 'package:outfitr/widgets/ProgressBar.dart';
 
-class ConfigurationColor extends StatelessWidget {
-  ConfigurationColor({
+class ConfigurationBrands extends StatelessWidget {
+  ConfigurationBrands({
     Key key,
   }) : super(key: key);
   @override
@@ -31,8 +30,8 @@ class ConfigurationColor extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Container(
               child: ProgressBar(
-                progress: 0.33,
-                step: '1',
+                progress: 0.66,
+                step: '2',
               ),
             ),
           ),
@@ -75,7 +74,7 @@ class ConfigurationColor extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Colors you prefer',
+                    'Brands you fancy',
                     style: TextStyle(
                       fontFamily: 'SFProDisplay-Semibold',
                       fontSize: 28,
@@ -146,15 +145,30 @@ class ConfigurationColor extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+          /* Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-                margin: EdgeInsets.only(bottom: height / 20),
-                child: Iconsiconclose(
-                  onTap: () =>Navigator.pop(context),
-                  isBlue: true,
-                )),
-          )
+              margin: EdgeInsets.only(bottom: height / 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    width: width / 3,
+                    child: ButtonsSecondarybutton(
+                      text: "Back",
+                      onTap: () =>
+                          Navigator.of(context).pop()
+                    ),
+                  ),
+                  Container(
+                    width: width / 3,
+                    child: ButtonsPrimarybutton(text: "Next",onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ConfigurationBrands())),),
+
+                  )
+                ],
+              ),
+            ),
+          ) */
         ],
       ),
     );

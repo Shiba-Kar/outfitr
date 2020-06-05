@@ -1,21 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
 
-import 'package:outfitr/screens/SuccessPopupScreen.dart';
-import 'package:outfitr/screens/configurations/ConfigurationBarands.dart';
-import 'dart:ui' as ui;
-import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
-import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
-import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
-import 'package:outfitr/widgets/Iconsiconclose.dart';
-import 'package:outfitr/widgets/Iconsiconemail.dart';
-import 'package:outfitr/widgets/Iconsiconlock.dart';
 import 'package:outfitr/widgets/ProgressBar.dart';
 
-class ConfigurationColor extends StatelessWidget {
-  ConfigurationColor({
+class ConfigurationPatterns extends StatelessWidget {
+  ConfigurationPatterns({
     Key key,
   }) : super(key: key);
   @override
@@ -31,8 +21,8 @@ class ConfigurationColor extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Container(
               child: ProgressBar(
-                progress: 0.33,
-                step: '1',
+                progress: 1.0,
+                step: '3',
               ),
             ),
           ),
@@ -75,7 +65,7 @@ class ConfigurationColor extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Colors you prefer',
+                    'Like some patterns?',
                     style: TextStyle(
                       fontFamily: 'SFProDisplay-Semibold',
                       fontSize: 28,
@@ -146,15 +136,30 @@ class ConfigurationColor extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+         /*  Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-                margin: EdgeInsets.only(bottom: height / 20),
-                child: Iconsiconclose(
-                  onTap: () =>Navigator.pop(context),
-                  isBlue: true,
-                )),
-          )
+              margin: EdgeInsets.only(bottom: height / 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    width: width / 3,
+                    child: ButtonsSecondarybutton(
+                      text: "Back",
+                      onTap: () =>
+                          Navigator.of(context).pop()
+                    ),
+                  ),
+                  Container(
+                    width: width / 3,
+                    child: ButtonsPrimarybutton(text: "Next",onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ConfigurationBrands())),),
+
+                  )
+                ],
+              ),
+            ),
+          ) */
         ],
       ),
     );

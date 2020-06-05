@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconcheckmarkbig.dart';
 import 'package:outfitr/Iconsiconswipe.dart';
 import 'package:outfitr/screens/configurations/ConfigurationColors.dart';
+import 'package:outfitr/screens/configurations/Configurations.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/CustomChip.dart';
 import 'package:outfitr/widgets/ShirtSize.dart';
@@ -209,8 +210,8 @@ class ConfigurationMain extends StatelessWidget {
                     child: Iconsiconswipe(),
                   ),
                   action: () =>
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ConfigurationColor())),
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => Configurations())),
                   
                   shimmer: true,
                   label: Text(
