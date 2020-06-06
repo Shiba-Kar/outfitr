@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
+import 'package:outfitr/screens/HomeScreen.dart';
+import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 
 import 'package:outfitr/widgets/ProgressBar.dart';
 
@@ -136,30 +138,20 @@ class ConfigurationPatterns extends StatelessWidget {
               ),
             ),
           ),
-         /*  Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               margin: EdgeInsets.only(bottom: height / 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Container(
-                    width: width / 3,
-                    child: ButtonsSecondarybutton(
-                      text: "Back",
-                      onTap: () =>
-                          Navigator.of(context).pop()
-                    ),
-                  ),
-                  Container(
-                    width: width / 3,
-                    child: ButtonsPrimarybutton(text: "Next",onTap:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ConfigurationBrands())),),
-
-                  )
-                ],
+              child: Container(
+                width: width / 3,
+                child: ButtonsPrimarybutton(
+                  text: "Save",
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomeScreen())),
+                ),
               ),
             ),
-          ) */
+          )
         ],
       ),
     );
