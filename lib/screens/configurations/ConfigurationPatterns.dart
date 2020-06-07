@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
-import 'package:outfitr/screens/HomeScreen.dart';
+import 'package:outfitr/screens/category_product/HomeScreen.dart';
+
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 
 import 'package:outfitr/widgets/ProgressBar.dart';

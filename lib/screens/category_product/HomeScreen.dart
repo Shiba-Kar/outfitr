@@ -3,6 +3,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconbag.dart';
 
+import 'package:outfitr/screens/category_product/InAppPopups.dart';
 
 import 'package:outfitr/widgets/ButtomCardSwitch.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
@@ -20,28 +21,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<SwipeStackState> _swipeKey = GlobalKey<SwipeStackState>();
-  GlobalKey<SliderMenuContainerState> _key =
-      new GlobalKey<SliderMenuContainerState>();
+  final GlobalKey<SwipeStackState> _swipeKey =
+      GlobalKey<SwipeStackState>(debugLabel: 's');
+  final GlobalKey<SliderMenuContainerState> _key =
+      GlobalKey<SliderMenuContainerState>(debugLabel: 'd');
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     final heigh = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     Widget mainScreen() {
       return Scaffold(
         backgroundColor: Colors.white,
         body: SliderMenuContainer(
-
           appBarColor: Colors.white,
           trailing: IconButton(
-            icon: Iconsiconbag(),
-            onPressed: () {},
-          ),
+              icon: Iconsiconbag(),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context)=>InAppPopups()))),
           key: _key,
           appBarPadding: const EdgeInsets.only(top: 20),
-          sliderMenuOpenOffset: width/1.3,
-        
+          sliderMenuOpenOffset: width / 1.3,
           appBarHeight: 60,
           title: Text(
             'OUTFIT IDEAS',
@@ -54,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
             textAlign: TextAlign.center,
           ),
           sliderMenuWidget: Menu(),
+          /*  drawerIcon: Iconsiconmenu(), */
           sliderMainWidget: Stack(
             children: <Widget>[
               Align(
@@ -101,10 +109,51 @@ class _HomeScreenState extends State<HomeScreen> {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  height: heigh / 2,
-                  width: width / 1.3,
-                  child: SwipeCards(),
-                ),
+                    height: heigh / 2,
+                    width: width / 1.3,
+                    child: SwipeStack(
+                      key: _swipeKey,
+                      children:
+                          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((int index) {
+                        return SwiperItem(builder:
+                            (SwiperPosition position, double progress) {
+                          return Material(
+                              elevation: 9,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6)),
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                    color: index.isEven
+                                        ? Color(0xffBEECC4)
+                                        : Color(0xffF1E0FF),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(6)),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text("Item $index",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20)),
+                                      Text("Progress $progress",
+                                          style: TextStyle(
+                                              color: Colors.blue,
+                                              fontSize: 12)),
+                                    ],
+                                  )));
+                        });
+                      }).toList(),
+                      visibleCount: 3,
+                      stackFrom: StackFrom.Top,
+                      translationInterval: 6,
+                      scaleInterval: 0.03,
+                      onEnd: () => debugPrint("onEnd"),
+                      onSwipe: (int index, SwiperPosition position) =>
+                          debugPrint("onSwipe $index $position"),
+                      onRewind: (int index, SwiperPosition position) =>
+                          debugPrint("onRewind $index $position"),
+                    )),
               ),
               Align(
                 alignment: Alignment.bottomCenter,
@@ -126,6 +175,9 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    return mainScreen();
+    return GestureDetector(
+      onTap: () => _key.currentState.closeDrawer(),
+      child: mainScreen(),
+    );
   }
 }

@@ -134,9 +134,9 @@ class Onboarding1 extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  ButtonsSecondarybutton(
+                  /* ButtonsSecondarybutton(
                     text: "Next",
-                  )
+                  ) */
                 ],
               ),
             ),

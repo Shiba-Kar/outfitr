@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:outfitr/screens/HomeScreen.dart';
 import 'package:outfitr/screens/onboardings/onboarding.dart';
 
 void main() async {
