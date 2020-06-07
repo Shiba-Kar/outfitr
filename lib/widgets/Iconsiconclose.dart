@@ -15,7 +15,7 @@ class Iconsiconclose extends StatelessWidget {
       onTap: onTap,
       child: Container(
           width: width / 7,
-          height: height / 13,
+          height: width / 7,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(width / 2)),
             color: isBlue ? const Color(0xff0c0d34) : const Color(0xffffffff),

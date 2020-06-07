@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ButtomCardSwitch extends StatelessWidget {
-  const ButtomCardSwitch({Key key}) : super(key: key);
+  final VoidCallback rightButton;
+  final VoidCallback leftButton;
+  final VoidCallback middleButton;
+  const ButtomCardSwitch(
+      {this.rightButton, this.leftButton, this.middleButton, Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +23,18 @@ class ButtomCardSwitch extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Icon(Icons.arrow_back),
-              Icon(Icons.open_in_new),
-              Icon(Icons.arrow_forward),
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: leftButton,
+              ),
+              IconButton(
+                icon: Icon(Icons.open_in_new),
+                onPressed: middleButton,
+              ),
+              IconButton(
+                icon: Icon(Icons.arrow_forward),
+                onPressed: rightButton,
+              ),
             ],
           )),
     );

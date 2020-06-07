@@ -97,7 +97,7 @@ class ConfigurationColor extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: height / 5,
+                    height: height / 5.2,
                     //color: Colors.red,
                     child: CarouselSlider(
                       options: CarouselOptions(
@@ -113,7 +113,7 @@ class ConfigurationColor extends StatelessWidget {
                             builder: (BuildContext context) {
                               return Stack(children: [
                                 Container(
-                                  width: width / 2,
+                                  width: width / 1.1,
                                   margin: EdgeInsets.symmetric(horizontal: 5.0),
                                   decoration: BoxDecoration(
                                     color: i == 1

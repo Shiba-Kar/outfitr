@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class CustomChip extends StatelessWidget {
   final String title;
   final bool isActive;
-  const CustomChip({@required this.title,@required this.isActive, Key key}) : super(key: key);
+  const CustomChip({@required this.title, @required this.isActive, Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,8 @@ class CustomChip extends StatelessWidget {
       width: width / 4,
       height: height / 20,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25.0),
-        color: isActive?const Color(0xff2cb9b0):const Color(0xfff6f6f6),
+        borderRadius: BorderRadius.circular(width / 2),
+        color: isActive ? const Color(0xff2cb9b0) : const Color(0xfff6f6f6),
       ),
       child: Center(
         child: Text(
@@ -23,7 +24,7 @@ class CustomChip extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'SFProDisplay-Medium',
             fontSize: 14,
-            color: isActive?const Color(0xffffffff):const Color(0xff0C0D34),
+            color: isActive ? const Color(0xffffffff) : const Color(0xff0C0D34),
           ),
           textAlign: TextAlign.center,
         ),
@@ -31,4 +32,3 @@ class CustomChip extends StatelessWidget {
     );
   }
 }
-

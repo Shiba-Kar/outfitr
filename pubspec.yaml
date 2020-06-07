@@ -28,7 +28,7 @@ dependencies:
   slider_button:
   carousel_slider: ^2.1.0
   swipe_stack: ^1.0.0
-  fancy_drawer: ^1.0.0
+  flutter_slider_drawer:
 
 
   # The following adds the Cupertino Icons font to your application.

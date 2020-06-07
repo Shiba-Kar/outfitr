@@ -1,8 +1,8 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:outfitr/screens/onboardings/onboarding.dart';
 
+import 'package:outfitr/screens/HomeScreen.dart';
+import 'package:outfitr/screens/onboardings/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     // debugShowMaterialGrid: true,
-debugShowCheckedModeBanner: false,
-      title: 'Outfitr',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Onboarding(),
+        // debugShowMaterialGrid: true,
+        debugShowCheckedModeBanner: false,
+        title: 'Outfitr',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: Onboarding(),
+      
     );
   }
 }
