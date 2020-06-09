@@ -105,6 +105,7 @@ class _LoginState extends State<LoginScreeen> {
                     height: height / 14,
                     child: TextFormField(
                       decoration: InputDecoration(
+                         hintText: "Enter your Email",
                         prefixIcon: Iconsiconemail(),
                         suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(
@@ -120,7 +121,9 @@ class _LoginState extends State<LoginScreeen> {
                     height: height / 14,
                     child: TextFormField(
                       obscureText: true,
+                      
                       decoration: InputDecoration(
+                        hintText: "Enter your password",
                         prefixIcon: Iconsiconlock(),
                         // suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(

@@ -138,6 +138,7 @@ class CreateAccountScreen extends StatelessWidget {
                     height: height / 14,
                     child: TextFormField(
                       decoration: InputDecoration(
+                         hintText: "Enter an Email",
                         prefixIcon: Iconsiconemail(),
                         suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(
@@ -154,6 +155,7 @@ class CreateAccountScreen extends StatelessWidget {
                     child: TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                         hintText: "Enter a Password",
                         prefixIcon: Iconsiconlock(),
                         // suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(
@@ -170,6 +172,7 @@ class CreateAccountScreen extends StatelessWidget {
                     child: TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                          hintText: "Re-Enter the Password",
                         prefixIcon: Iconsiconlock(),
                         // suffixIcon: Iconsiconcheckmark(),
                         border: OutlineInputBorder(
@@ -186,7 +189,7 @@ class CreateAccountScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(""),
                   ),
-                  ButtonsPrimarybutton(text: "Create"),
+                  ButtonsPrimarybutton(text: "Create",onTap: (){},),
                 ],
               ),
             ),

@@ -15,9 +15,15 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget>[DelayedAnimation(
-          delay: 500,
-          child: ShapeGallery()), Heading()],
+        children: <Widget>[
+          DelayedAnimation(
+            delay: 500,
+            child: ShapeGallery(),
+          ),
+          DelayedAnimation(
+            delay: 1000,
+            child: Heading())
+        ],
       ),
     );
   }
@@ -30,12 +36,12 @@ class ShapeGallery extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    
+
     return Container(
-     // color:Colors.red,
-      margin:  EdgeInsets.all(width/100),
+      // color:Colors.red,
+      margin: EdgeInsets.all(width / 50),
       height: height / 1.2,
-      padding: EdgeInsets.all(width/200),
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +51,7 @@ class ShapeGallery extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(79380.0),
                   color: const Color(0xffffdddd),
@@ -53,7 +59,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(53.0),
@@ -65,7 +71,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 color: const Color(0xffffecc5),
               ),
             ],
@@ -75,12 +81,12 @@ class ShapeGallery extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 color: const Color(0xffd7ecff),
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(79380.0),
                   color: const Color(0xffffe4d9),
@@ -88,7 +94,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(54.0),
@@ -105,7 +111,7 @@ class ShapeGallery extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(428.65),
@@ -116,12 +122,12 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 color: const Color(0xfffff4c5),
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4762.8),
@@ -138,7 +144,7 @@ class ShapeGallery extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(79380.0),
                   color: const Color(0xffd6faff),
@@ -146,7 +152,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(54.0),
@@ -158,7 +164,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 color: const Color(0xffffeaed),
               ),
             ],
@@ -168,7 +174,7 @@ class ShapeGallery extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(428.65),
@@ -179,7 +185,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4762.8),
@@ -191,7 +197,7 @@ class ShapeGallery extends StatelessWidget {
               ),
               Container(
                 width: width / 4,
-                height: height / 7,
+                height: width / 4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(428.65),

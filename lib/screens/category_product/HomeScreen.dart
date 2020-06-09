@@ -42,14 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         body: SliderMenuContainer(
           appBarColor: Colors.white,
-          trailing: IconButton(
-              icon: Iconsiconbag(),
-              onPressed: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context)=>InAppPopups()))),
+          trailing: Iconsiconbag(
+            itemsCount: "12",
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => InAppPopups(),
+              ),
+            ),
+          ),
           key: _key,
-          appBarPadding: const EdgeInsets.only(top: 20),
+          appBarPadding: EdgeInsets.all(width/40),
           sliderMenuOpenOffset: width / 1.3,
-          appBarHeight: 60,
+          appBarHeight: width/20,
+
           title: Text(
             'OUTFIT IDEAS',
             style: TextStyle(

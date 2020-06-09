@@ -94,7 +94,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ButtonsPrimarybutton(text: "Reset Password"),
+                  ButtonsPrimarybutton(text: "Reset Password",onTap:(){}),
                   SizedBox(
                     width: width,
                     child: GestureDetector(

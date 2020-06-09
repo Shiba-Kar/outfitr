@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="682" viewBox="0 0 375 682">
+  <g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+    <path id="green_bg" data-name="green bg" d="M0,0H375V301.865H0V0Z" fill="#2cb9b0"/>
+    <path id="bg" d="M0-60A60,60,0,0,0,60,0H315a60,60,0,0,0,60-60V-427.074a80,80,0,0,0-80-80H80a80,80,0,0,1-80-80V-60Z" transform="translate(0 682)" fill="#fff"/>
+  </g>
+</svg>

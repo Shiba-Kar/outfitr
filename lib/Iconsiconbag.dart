@@ -1,28 +1,57 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Iconsiconbag extends StatelessWidget {
-  Iconsiconbag({
-    Key key,
-  }) : super(key: key);
+  final VoidCallback onTap;
+  final String itemsCount;
+  Iconsiconbag({Key key, this.onTap, @required this.itemsCount})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return Container(
-      width: width / 10,
-      height: width / 10,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(width / 2),
-        color: const Color(0xfffafafa),
-      ),
-      child: Center(
-        child: SvgPicture.string(
-          _svg_o3nrif,
-          allowDrawingOutsideViewBox: true,
-        ),
+
+    return GestureDetector(
+      onTap: onTap,
+      child: Stack(
+        children: <Widget>[
+          Container(
+            width: width / 10,
+            height: width / 10,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(width / 2),
+              color: const Color(0x66fafafa),
+            ),
+            child: Center(
+              child: SvgPicture.string(
+                _svg_o3nrif,
+                color: Colors.white,
+                height: 20,
+                width: 20,
+                allowDrawingOutsideViewBox: true,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0.0,
+            right: 0.0,
+            child: Container(
+              width: width / 24,
+              height: width / 24,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(width / 2),
+                color: Colors.white,
+              ),
+              child: Center(
+                  child: Text(
+                itemsCount,
+                style: TextStyle(
+                    color: Colors.teal,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10),
+              )),
+            ),
+          )
+        ],
       ),
     );
   }

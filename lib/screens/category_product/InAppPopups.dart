@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconcheckmarkbig.dart';
+import 'package:outfitr/screens/category_product/ProductDetails.dart';
 import 'package:outfitr/screens/registration/LoginScreen.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/widgets/Iconsiconclose.dart';
 import 'package:outfitr/widgets/PeopleRow.dart';
-
 
 class InAppPopups extends StatelessWidget {
   InAppPopups({
@@ -80,11 +80,9 @@ class InAppPopups extends StatelessWidget {
                       ),
                     ),
                     Container(
-                    
-                      width: width / 2.5,
-                      height: height / 15,
-                      child: Center(child: PeopleRow())
-                    ),
+                        width: width / 2.5,
+                        height: height / 15,
+                        child: Center(child: PeopleRow())),
                     Container(
                       width: width / 2,
                       height: height / 15,
@@ -119,7 +117,7 @@ class InAppPopups extends StatelessWidget {
                           onTap: () {
                             Navigator.of(context).pop();
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => LoginScreeen()));
+                                builder: (context) => ProductDetails()));
                           }),
                     )
                   ],
@@ -142,5 +140,3 @@ class InAppPopups extends StatelessWidget {
     );
   }
 }
-
-

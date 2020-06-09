@@ -7,6 +7,7 @@ import 'package:outfitr/screens/configurations/Configurations.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/CustomChip.dart';
 import 'package:outfitr/widgets/ShirtSize.dart';
+import 'package:outfitr/widgets/SliderButtonCus.dart';
 import 'package:slider_button/slider_button.dart';
 
 class ConfigurationMain extends StatelessWidget {
@@ -197,33 +198,16 @@ class ConfigurationMain extends StatelessWidget {
           Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                // color: Colors.red,
-                padding: EdgeInsets.all(width / 15),
-                child: SliderButton(
-                  vibrationFlag: false,
-                  width: width / 1.4,
-                  backgroundColor: Color(0xff2CB9B0),
-                  alignLabel: Alignment.center,
-                  boxShadow: BoxShadow(),
-                  child: Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: Iconsiconswipe(),
-                  ),
-                  action: () =>
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => Configurations())),
-                  
-                  shimmer: true,
-                  label: Text(
-                    "Swipe to continue",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 17,
+                  // color: Colors.red,
+                  padding: EdgeInsets.all(width / 15),
+                  child: SliderButtonCus(
+                    text: "Swipe to continue",
+                    action: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => Configurations(),
+                      ),
                     ),
-                  ),
-                ),
-              ))
+                  )))
         ],
       ),
     );
