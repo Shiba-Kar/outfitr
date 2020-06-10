@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconcheckmarkbig.dart';
+import 'package:outfitr/screens/registration/LoginScreen.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/widgets/Iconsiconclose.dart';
-
-import 'registration/LoginScreen.dart';
 
 class SuccessPopupScreen extends StatelessWidget {
   SuccessPopupScreen({

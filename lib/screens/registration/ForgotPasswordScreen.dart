@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:outfitr/screens/SuccessPopupScreen.dart';
-import 'dart:ui' as ui;
+import 'package:outfitr/screens/registration/SuccessPopupScreen.dart';
+
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
 import 'package:outfitr/widgets/Iconsiconemail.dart';
-import 'package:outfitr/widgets/Iconsiconlock.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   ForgotPasswordScreen({
@@ -94,7 +92,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ButtonsPrimarybutton(text: "Reset Password",onTap:(){}),
+                  ButtonsPrimarybutton(text: "Reset Password", onTap: () {}),
                   SizedBox(
                     width: width,
                     child: GestureDetector(

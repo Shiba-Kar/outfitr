@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
 
-import 'package:outfitr/screens/SuccessPopupScreen.dart';
+
 import 'package:outfitr/screens/configurations/ConfigurationBarands.dart';
 import 'dart:ui' as ui;
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';

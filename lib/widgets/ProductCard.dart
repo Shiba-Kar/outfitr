@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(width / 30),
       width: width / 4,
-      height: width / 6,
+      height: width / 4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(width / 40),

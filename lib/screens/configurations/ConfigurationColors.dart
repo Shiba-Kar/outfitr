@@ -1,17 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
 
-import 'package:outfitr/screens/SuccessPopupScreen.dart';
-import 'package:outfitr/screens/configurations/ConfigurationBarands.dart';
-import 'dart:ui' as ui;
-import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
-import 'package:outfitr/widgets/ButtonsSecondarybutton.dart';
-import 'package:outfitr/widgets/Iconsiconcheckmark.dart';
 import 'package:outfitr/widgets/Iconsiconclose.dart';
-import 'package:outfitr/widgets/Iconsiconemail.dart';
-import 'package:outfitr/widgets/Iconsiconlock.dart';
+
 import 'package:outfitr/widgets/ProgressBar.dart';
 
 class ConfigurationColor extends StatelessWidget {
@@ -151,7 +144,7 @@ class ConfigurationColor extends StatelessWidget {
             child: Container(
                 margin: EdgeInsets.only(bottom: height / 20),
                 child: Iconsiconclose(
-                  onTap: () =>Navigator.pop(context),
+                  onTap: () => Navigator.pop(context),
                   isBlue: true,
                 )),
           )
