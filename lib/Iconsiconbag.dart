@@ -4,7 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 class Iconsiconbag extends StatelessWidget {
   final VoidCallback onTap;
   final String itemsCount;
-  Iconsiconbag({Key key, this.onTap, @required this.itemsCount})
+  final Color color;
+  Iconsiconbag({Key key, this.onTap, @required this.itemsCount,@required this.color})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class Iconsiconbag extends StatelessWidget {
             child: Center(
               child: SvgPicture.string(
                 _svg_o3nrif,
-                color: Colors.white,
+                color: color,
                 height: 20,
                 width: 20,
                 allowDrawingOutsideViewBox: true,

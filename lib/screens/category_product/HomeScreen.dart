@@ -23,7 +23,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<SwipeStackState> _swipeKey =
       GlobalKey<SwipeStackState>(debugLabel: 's');
-  final GlobalKey<SliderMenuContainerState> _key =
+  final GlobalKey<SliderMenuContainerState> _menueKey =
       GlobalKey<SliderMenuContainerState>(debugLabel: 'd');
 
   @override
@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SliderMenuContainer(
           appBarColor: Colors.white,
           trailing: Iconsiconbag(
+            color: Colors.black,
             itemsCount: "12",
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -50,11 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          key: _key,
-          appBarPadding: EdgeInsets.all(width/40),
+          key: _menueKey,
+          appBarPadding: EdgeInsets.all(width / 40),
           sliderMenuOpenOffset: width / 1.3,
-          appBarHeight: width/20,
-
+          appBarHeight: width / 20,
           title: Text(
             'OUTFIT IDEAS',
             style: TextStyle(
@@ -65,7 +65,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             textAlign: TextAlign.center,
           ),
-          sliderMenuWidget: Menu(),
+          sliderMenuWidget: Menu(
+            menueKey: _menueKey,
+          ),
           /*  drawerIcon: Iconsiconmenu(), */
           sliderMainWidget: Stack(
             children: <Widget>[
@@ -106,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: width,
                   child: SvgPicture.asset(
                     'assets/svg/home_bg.svg',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                     alignment: Alignment.bottomCenter,
                   ),
                 ),
@@ -181,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return GestureDetector(
-      onTap: () => _key.currentState.closeDrawer(),
+      onTap: () => _menueKey.currentState.closeDrawer(),
       child: mainScreen(),
     );
   }

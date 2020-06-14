@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/Iconsiconback.dart';
 import 'package:outfitr/Iconsiconbag.dart';
 import 'package:outfitr/Iconsswipeline.dart';
 import 'package:outfitr/screens/shopping_cart/ShoppingCart.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
+import 'package:outfitr/widgets/Iconsiconback.dart';
 import 'package:outfitr/widgets/PeopleRow.dart';
 import 'package:outfitr/widgets/ProductCard.dart';
 import 'package:outfitr/widgets/ShirtSize.dart';
@@ -226,6 +226,7 @@ class ProductDetails extends StatelessWidget {
                           onTap: () => Navigator.of(context).pop(),
                         ),
                         Iconsiconbag(
+                          color: Colors.white,
                           itemsCount: "12",
                           onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(

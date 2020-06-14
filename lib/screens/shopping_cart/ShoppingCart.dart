@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:outfitr/Iconsiconback.dart';
 import 'package:outfitr/Iconsiconbag.dart';
+import 'package:outfitr/screens/settings_profile/favorite_outfits.dart';
 import 'package:outfitr/widgets/ButtomSheetSiw.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/Iconsswipeline.dart';
+import 'package:outfitr/widgets/Iconsiconback.dart';
 import 'package:outfitr/widgets/ShirtSize.dart';
 import 'package:outfitr/widgets/SlidableProductCard.dart';
 import 'package:outfitr/widgets/SliderButtonCus.dart';
@@ -157,10 +158,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       textAlign: TextAlign.center,
                     ),
                     Iconsiconbag(
+                      color: Colors.white,
                       itemsCount: "12",
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => ShoppingCart(),
+                          builder: (context) => FavoriteOutfitScreen(),
                         ),
                       ),
                     )

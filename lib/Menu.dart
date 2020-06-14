@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconheart.dart';
 import 'package:outfitr/Iconsiconhistory.dart';
@@ -6,27 +7,37 @@ import 'package:outfitr/Iconsiconideas.dart';
 import 'package:outfitr/Iconsiconlogout.dart';
 import 'package:outfitr/Iconsiconsettings.dart';
 import 'package:outfitr/Iconsiconuser.dart';
+import 'package:outfitr/screens/settings_profile/MyProfileConfiguration.dart';
+import 'package:outfitr/screens/settings_profile/NotificationSettings.dart';
+import 'package:outfitr/screens/settings_profile/TransactionHistory.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({Key key}) : super(key: key);
+  final GlobalKey<SliderMenuContainerState> menueKey;
+  const Menu({@required this.menueKey, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    Widget tile({@required String title, Widget icon}) {
-      return Container(
-        width: width,
-        child: ListTile(
-          leading: icon,
-          title: Text(
-            title,
-            style: TextStyle(
-              fontFamily: 'SFProDisplay-Medium',
-              fontSize: 16,
-              color: const Color(0xff0c0d34),
+    Widget tile({@required String title, Widget icon, @required Widget route}) {
+      return GestureDetector(
+        onTap: () {
+          menueKey.currentState.closeDrawer();
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => route));
+        },
+        child: Container(
+          width: width,
+          child: ListTile(
+            leading: icon,
+            title: Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'SFProDisplay-Medium',
+                fontSize: 16,
+                color: const Color(0xff0c0d34),
+              ),
+              textAlign: TextAlign.left,
             ),
-            textAlign: TextAlign.left,
           ),
         ),
       );
@@ -96,12 +107,30 @@ class Menu extends StatelessWidget {
             height: height / 2,
             child: Column(
               children: <Widget>[
-                tile(title: 'Outfit Ideas', icon: Iconsiconideas()),
-                tile(title: 'Favorite Outfit', icon: Iconsiconheart()),
-                tile(title: 'Edit Profile', icon: Iconsiconuser()),
-                tile(title: 'Transaction History', icon: Iconsiconhistory()),
-                tile(title: 'Notifications Settings', icon: Iconsiconsettings()),
-                tile(title: 'Logout', icon: Iconsiconlogout())
+                tile(
+                    title: 'Outfit Ideas',
+                    icon: Iconsiconideas(),
+                    route: NotificationSettings()),
+                tile(
+                    title: 'Favorite Outfit',
+                    icon: Iconsiconheart(),
+                    route: NotificationSettings()),
+                tile(
+                    title: 'Edit Profile',
+                    icon: Iconsiconuser(),
+                    route: MyProfileConfiguration()),
+                tile(
+                    title: 'Transaction History',
+                    icon: Iconsiconhistory(),
+                    route: TransactionHistory()),
+                tile(
+                    title: 'Notifications Settings',
+                    icon: Iconsiconsettings(),
+                    route: NotificationSettings()),
+                tile(
+                    title: 'Logout',
+                    icon: Iconsiconlogout(),
+                    route: NotificationSettings())
               ],
             ),
           ),

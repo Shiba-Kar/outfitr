@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Outfitr',
         theme: ThemeData(
           primarySwatch: Colors.teal,
+          canvasColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Onboarding(),
