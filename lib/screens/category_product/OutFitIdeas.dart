@@ -13,14 +13,14 @@ import 'package:outfitr/widgets/ItemsCategories.dart';
 import 'package:outfitr/widgets/SwipeCards.dart';
 import 'package:swipe_stack/swipe_stack.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+class OutfitIdeas extends StatefulWidget {
+  OutfitIdeas({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _OutfitIdeasState createState() => _OutfitIdeasState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _OutfitIdeasState extends State<OutfitIdeas> {
   final GlobalKey<SwipeStackState> _swipeKey =
       GlobalKey<SwipeStackState>(debugLabel: 's');
   final GlobalKey<SliderMenuContainerState> _menueKey =

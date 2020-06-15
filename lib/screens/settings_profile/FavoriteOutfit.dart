@@ -11,14 +11,14 @@ import 'package:outfitr/widgets/Iconsiconcloseflat.dart';
 import 'package:outfitr/widgets/Iconsiconedit.dart';
 import 'package:outfitr/widgets/Iconsiconprevious.dart';
 
-class FavoriteOutfitScreen extends StatefulWidget {
-  const FavoriteOutfitScreen({Key key}) : super(key: key);
+class FavoriteOutfit extends StatefulWidget {
+  const FavoriteOutfit({Key key}) : super(key: key);
 
   @override
-  _FavoriteOutfitScreenState createState() => _FavoriteOutfitScreenState();
+  _FavoriteOutfitState createState() => _FavoriteOutfitState();
 }
 
-class _FavoriteOutfitScreenState extends State<FavoriteOutfitScreen> {
+class _FavoriteOutfitState extends State<FavoriteOutfit> {
   List<Color> colorList = [
     Color(0xFFBFEAF5),
     Color(0xFFBEECC4),
@@ -59,6 +59,8 @@ class _FavoriteOutfitScreenState extends State<FavoriteOutfitScreen> {
                           });
                         })
                       : Iconsiconprevious(
+                         iconColor: Colors.black,
+                        color: Colors.white,
                           onTap: () => Navigator.of(context).pop(),
                         ),
                   Text(

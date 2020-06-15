@@ -22,6 +22,8 @@ class NotificationSettings extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Iconsiconprevious(
+                    color: Colors.white,
+                    iconColor: Colors.black,
                     onTap: () => Navigator.of(context).pop(),
                   ),
                   Text(

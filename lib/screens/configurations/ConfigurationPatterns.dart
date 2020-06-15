@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:outfitr/Iconsiconcheckmarkstroke.dart';
-import 'package:outfitr/screens/category_product/HomeScreen.dart';
+import 'package:outfitr/screens/category_product/OutFitIdeas.dart';
 
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 
@@ -148,7 +148,7 @@ class ConfigurationPatterns extends StatelessWidget {
                 child: ButtonsPrimarybutton(
                   text: "Save",
                   onTap: () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => HomeScreen())),
+                      MaterialPageRoute(builder: (context) => OutfitIdeas())),
                 ),
               ),
             ),

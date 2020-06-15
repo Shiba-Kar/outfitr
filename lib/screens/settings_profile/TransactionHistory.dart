@@ -23,6 +23,8 @@ class TransactionHistory extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Iconsiconprevious(
+                     iconColor: Colors.black,
+                    color:Colors.white,
                     onTap: () => Navigator.of(context).pop(),
                   ),
                   Text(

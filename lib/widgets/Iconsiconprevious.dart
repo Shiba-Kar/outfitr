@@ -3,8 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class Iconsiconprevious extends StatelessWidget {
   final VoidCallback onTap;
+  final Color color;
+  final Color iconColor;
   Iconsiconprevious({
+    @required this.iconColor,
     @required this.onTap,
+@required  this.color,
     Key key,
   }) : super(key: key);
   @override
@@ -20,12 +24,12 @@ class Iconsiconprevious extends StatelessWidget {
             height: width / 10,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 2),
-              color: const Color(0x66fafafa),
+              color: color,
             ),
             child: Center(
               child: SvgPicture.string(
                 _svg_obdavc,
-                color: Colors.black,
+                color: iconColor,
                 height: 15,
                 width: 15,
                 allowDrawingOutsideViewBox: true,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:outfitr/screens/category_product/HomeScreen.dart';
 import 'package:outfitr/screens/category_product/ProductDetails.dart';
 
 import 'package:outfitr/screens/onboardings/onboarding.dart';

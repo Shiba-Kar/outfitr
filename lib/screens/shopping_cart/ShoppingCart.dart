@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconbag.dart';
-import 'package:outfitr/screens/settings_profile/favorite_outfits.dart';
 import 'package:outfitr/widgets/ButtomSheetSiw.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/Iconsswipeline.dart';
@@ -160,11 +159,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     Iconsiconbag(
                       color: Colors.white,
                       itemsCount: "12",
-                      onTap: () => Navigator.of(context).push(
+                      onTap: () => {}/* Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => FavoriteOutfitScreen(),
+                          builder: (context) => FavoriteOutfit(),
                         ),
-                      ),
+                      ), */
                     )
                   ],
                 ),

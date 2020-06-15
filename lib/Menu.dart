@@ -7,6 +7,8 @@ import 'package:outfitr/Iconsiconideas.dart';
 import 'package:outfitr/Iconsiconlogout.dart';
 import 'package:outfitr/Iconsiconsettings.dart';
 import 'package:outfitr/Iconsiconuser.dart';
+import 'package:outfitr/screens/category_product/OutFitIdeas.dart';
+import 'package:outfitr/screens/settings_profile/FavoriteOutfit.dart';
 import 'package:outfitr/screens/settings_profile/MyProfileConfiguration.dart';
 import 'package:outfitr/screens/settings_profile/NotificationSettings.dart';
 import 'package:outfitr/screens/settings_profile/TransactionHistory.dart';
@@ -110,11 +112,11 @@ class Menu extends StatelessWidget {
                 tile(
                     title: 'Outfit Ideas',
                     icon: Iconsiconideas(),
-                    route: NotificationSettings()),
+                    route: OutfitIdeas()),
                 tile(
                     title: 'Favorite Outfit',
                     icon: Iconsiconheart(),
-                    route: NotificationSettings()),
+                    route: FavoriteOutfit()),
                 tile(
                     title: 'Edit Profile',
                     icon: Iconsiconuser(),
