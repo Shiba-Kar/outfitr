@@ -8,9 +8,7 @@ import 'package:outfitr/screens/category_product/InAppPopups.dart';
 import 'package:outfitr/widgets/ButtomCardSwitch.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/Menu.dart';
-import 'package:outfitr/widgets/Iconsiconmenu.dart';
 import 'package:outfitr/widgets/ItemsCategories.dart';
-import 'package:outfitr/widgets/SwipeCards.dart';
 import 'package:swipe_stack/swipe_stack.dart';
 
 class OutfitIdeas extends StatefulWidget {
@@ -28,7 +26,7 @@ class _OutfitIdeasState extends State<OutfitIdeas> {
 
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
   }
 
@@ -53,7 +51,8 @@ class _OutfitIdeasState extends State<OutfitIdeas> {
           ),
           key: _menueKey,
           appBarPadding: EdgeInsets.all(width / 40),
-          sliderMenuOpenOffset: width / 1.3,
+
+          // sliderMenuOpenOffset: width / 1.3,
           appBarHeight: width / 20,
           title: Text(
             'OUTFIT IDEAS',
@@ -65,11 +64,11 @@ class _OutfitIdeasState extends State<OutfitIdeas> {
             ),
             textAlign: TextAlign.center,
           ),
-          sliderMenuWidget: Menu(
+          sliderMenu: Menu(
             menueKey: _menueKey,
           ),
           /*  drawerIcon: Iconsiconmenu(), */
-          sliderMainWidget: Stack(
+          sliderMain: Stack(
             children: <Widget>[
               Align(
                 alignment: Alignment.topCenter,

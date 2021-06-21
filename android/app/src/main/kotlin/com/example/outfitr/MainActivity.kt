@@ -1,4 +1,4 @@
-package com.fashion.outfitr
+package com.example.outfitr
 
 import io.flutter.embedding.android.FlutterActivity
 

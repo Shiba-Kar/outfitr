@@ -16,7 +16,7 @@ class ForgotPasswordScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xff0c0d34),
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: <Widget>[
           Align(

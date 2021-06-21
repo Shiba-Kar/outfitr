@@ -22,7 +22,7 @@ class CreateAccountScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff0c0d34),
       body: Stack(
         children: <Widget>[

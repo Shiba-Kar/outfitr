@@ -38,7 +38,7 @@ class _LoginState extends State<LoginScreeen> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff0c0d34),
       body: Stack(
         children: <Widget>[

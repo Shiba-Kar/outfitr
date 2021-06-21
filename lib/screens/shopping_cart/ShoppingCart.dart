@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconbag.dart';
-import 'package:outfitr/widgets/ButtomSheetSiw.dart';
 import 'package:outfitr/widgets/ButtonsPrimarybutton.dart';
 import 'package:outfitr/Iconsswipeline.dart';
 import 'package:outfitr/widgets/Iconsiconback.dart';
 import 'package:outfitr/widgets/ShirtSize.dart';
 import 'package:outfitr/widgets/SlidableProductCard.dart';
 import 'package:outfitr/widgets/SliderButtonCus.dart';
-import 'package:snapping_sheet/snapping_sheet.dart';
 
 class ShoppingCart extends StatefulWidget {
   const ShoppingCart({Key key}) : super(key: key);
