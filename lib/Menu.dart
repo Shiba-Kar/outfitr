@@ -14,7 +14,7 @@ import 'package:outfitr/screens/settings_profile/NotificationSettings.dart';
 import 'package:outfitr/screens/settings_profile/TransactionHistory.dart';
 
 class Menu extends StatelessWidget {
-  final GlobalKey<SliderMenuContainerState> menueKey;
+  final GlobalKey<SliderDrawerState> menueKey;
   const Menu({@required this.menueKey, Key key}) : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class Menu extends StatelessWidget {
     Widget tile({@required String title, Widget icon, @required Widget route}) {
       return GestureDetector(
         onTap: () {
-          menueKey.currentState.closeDrawer();
+          menueKey.currentState.closeSlider();
           Navigator.of(context).push(MaterialPageRoute(builder: (_) => route));
         },
         child: Container(

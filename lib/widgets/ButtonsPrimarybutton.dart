@@ -19,13 +19,16 @@ class ButtonsPrimarybutton extends StatelessWidget {
         borderRadius: BorderRadius.circular(width / 2),
         color: const Color(0xff2cb9b0),
       ),
-      child: FlatButton(
+      child: ElevatedButton(
         onPressed: onTap,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10.0),
+        style: ButtonStyle(
+            shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
           ),
-        ),
+        )),
         child: Text(
           text,
           style: TextStyle(

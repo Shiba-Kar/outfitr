@@ -6,8 +6,9 @@ class SlidableProductCard extends StatefulWidget {
   final String name;
   final String price;
   final String amount;
-  final Widget sise; 
-  const SlidableProductCard({this.amount, this.price, this.name, this.sise,Key key})
+  final Widget sise;
+  const SlidableProductCard(
+      {this.amount, this.price, this.name, this.sise, Key key})
       : super(key: key);
 
   @override
@@ -25,7 +26,6 @@ class _SlidableProductCardState extends State<SlidableProductCard> {
     final width = MediaQuery.of(context).size.width;
     return Container(
       child: Slidable(
-        
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.37,
         child: Container(

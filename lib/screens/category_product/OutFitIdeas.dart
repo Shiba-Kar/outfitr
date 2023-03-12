@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:outfitr/Iconsiconbag.dart';
-
 import 'package:outfitr/screens/category_product/InAppPopups.dart';
-
 import 'package:outfitr/widgets/ButtomCardSwitch.dart';
 import 'package:outfitr/widgets/DelayedAnimation.dart';
 import 'package:outfitr/Menu.dart';
@@ -21,12 +19,11 @@ class OutfitIdeas extends StatefulWidget {
 class _OutfitIdeasState extends State<OutfitIdeas> {
   final GlobalKey<SwipeStackState> _swipeKey =
       GlobalKey<SwipeStackState>(debugLabel: 's');
-  final GlobalKey<SliderMenuContainerState> _menueKey =
-      GlobalKey<SliderMenuContainerState>(debugLabel: 'd');
+  final GlobalKey<SliderDrawerState> _menueKey =
+      GlobalKey<SliderDrawerState>(debugLabel: 'd');
 
   @override
   void initState() {
-  
     super.initState();
   }
 
@@ -38,37 +35,37 @@ class _OutfitIdeasState extends State<OutfitIdeas> {
     Widget mainScreen() {
       return Scaffold(
         backgroundColor: Colors.white,
-        body: SliderMenuContainer(
-          appBarColor: Colors.white,
-          trailing: Iconsiconbag(
-            color: Colors.black,
-            itemsCount: "12",
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => InAppPopups(),
+        body: SliderDrawer(
+          appBar: SliderAppBar(
+            appBarColor: Colors.white,
+            trailing: Iconsiconbag(
+              color: Colors.black,
+              itemsCount: "12",
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => InAppPopups(),
+                ),
               ),
+            ),
+            appBarPadding: EdgeInsets.all(width / 40),
+
+            // sliderMenuOpenOffset: width / 1.3,
+            appBarHeight: width / 20,
+            title: Text(
+              'OUTFIT IDEAS',
+              style: TextStyle(
+                fontFamily: 'SFProDisplay-Semibold',
+                fontSize: width / 30,
+                color: const Color(0xff0c0d34),
+                letterSpacing: 1.5,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
           key: _menueKey,
-          appBarPadding: EdgeInsets.all(width / 40),
-
-          // sliderMenuOpenOffset: width / 1.3,
-          appBarHeight: width / 20,
-          title: Text(
-            'OUTFIT IDEAS',
-            style: TextStyle(
-              fontFamily: 'SFProDisplay-Semibold',
-              fontSize: width / 30,
-              color: const Color(0xff0c0d34),
-              letterSpacing: 1.5,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          sliderMenu: Menu(
-            menueKey: _menueKey,
-          ),
+          slider: Menu(menueKey: _menueKey),
           /*  drawerIcon: Iconsiconmenu(), */
-          sliderMain: Stack(
+          child: Stack(
             children: <Widget>[
               Align(
                 alignment: Alignment.topCenter,
@@ -182,7 +179,7 @@ class _OutfitIdeasState extends State<OutfitIdeas> {
     }
 
     return GestureDetector(
-      onTap: () => _menueKey.currentState.closeDrawer(),
+      onTap: () => _menueKey.currentState.closeSlider(),
       child: mainScreen(),
     );
   }
